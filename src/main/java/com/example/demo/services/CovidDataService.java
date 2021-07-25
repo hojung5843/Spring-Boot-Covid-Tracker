@@ -44,8 +44,8 @@ public class CovidDataService {
             locationStat.setState(record.get("Province/State"));
             locationStat.setCountry(record.get("Country/Region"));
             int index = record.size()-1;
-            int totalCase = Math.abs((Integer.parseInt(record.get(index-1))- Integer.parseInt(record.get(index))));
-            locationStat.setLatestTotalCases(totalCase);
+            int totalCases = Math.abs((Integer.parseInt(record.get(index-1))- Integer.parseInt(record.get(index))));
+            locationStat.setLatestTotalCases(totalCases);
             newStats.add(locationStat);
         }
         this.allStats = newStats;
